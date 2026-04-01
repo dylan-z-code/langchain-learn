@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python test.py)",
+      "Bash(pip show:*)",
+      "Bash(python -c \"import langchain.agents; print\\(dir\\(langchain.agents\\)[:20]\\)\")",
+      "Bash(python -c \"import langchain.agents; import pprint; pprint.pprint\\([x for x in dir\\(langchain.agents\\) if not x.startswith\\(''_''\\)]\\)\")",
+      "Bash(python -c \"from langchain.agents import initialize_agent; print\\(''initialize_agent is available''\\)\")",
+      "Bash(python -c \"import langchain.agents; help\\(langchain.agents.create_agent\\)\")",
+      "Bash(timeout 30 python test_agent_search.py)",
+      "Bash(timeout 60 python test_agent_search.py)"
+    ]
+  }
+}
