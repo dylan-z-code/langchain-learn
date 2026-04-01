@@ -9,7 +9,12 @@
       "Bash(python -c \"from langchain.agents import initialize_agent; print\\(''initialize_agent is available''\\)\")",
       "Bash(python -c \"import langchain.agents; help\\(langchain.agents.create_agent\\)\")",
       "Bash(timeout 30 python test_agent_search.py)",
-      "Bash(timeout 60 python test_agent_search.py)"
+      "Bash(timeout 60 python test_agent_search.py)",
+      "Bash(python -m py_compile main.py)",
+      "Bash(python -m py_compile config/config.py)",
+      "Bash(mkdir -p tests)",
+      "Bash(mv test_agent_search.py tests/)",
+      "Bash(python -c \"import config.config; import src.agents.agent_builder; import src.tools.search_tool; import src.utils.conversation_handler; print\\(''所有模块导入成功''\\)\")"
     ]
   }
 }
